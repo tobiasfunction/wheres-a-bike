@@ -16,14 +16,21 @@ function App() {
   }
 
   return (
-    <div>
-      <header className="bg-blue text-white">Where's A Bike</header>
-      <div className="container mx-auto">
-        <NetworksContainer />
-        <AllStations />
-        <FavoriteStations />
+    <div className="min-h-screen flex flex-col">
+      <header className="bg-blue text-white font-extrabold text-center">Where's A Bike?</header>
+      {/* App body */}
+      <div className="container mx-auto flex-grow md:flex md:flex-row-reverse md:justify-center">
+        {/* right column */}
+        <div>
+          <FavoriteStations />
+        </div>
+        {/* left column */}
+        <div>
+          <NetworksContainer />
+          <AllStations />
+        </div>
       </div>
-      <footer className="bg-blue text-white">footer</footer>
+      <footer className="w-full bg-blue text-white self-end">footer</footer>
     </div>
   );
 }
