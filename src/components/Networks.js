@@ -4,8 +4,8 @@ export default function Networks(props) {
       <p className="text-xl font-extrabold"> Networks</p>
       <label htmlFor="chooseNetwork"><p>Choose a Network</p></label>
       <select id="chooseNetwork">
-        <option selected value="networkName">
-          Network Name
+        <option value="bicing">
+          Bicing
         </option>
       </select>
     </div>

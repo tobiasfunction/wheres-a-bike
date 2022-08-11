@@ -16,7 +16,7 @@ function App() {
           <FavoriteStations />
         </div>
         {/* left column */}
-        <div className="md:w-96">
+        <div className="md:w-[32rem]">
           <Networks />
           <AllStations />
         </div>
