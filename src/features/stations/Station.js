@@ -1,4 +1,8 @@
+import React from "react";
+
 export default function Station(props) {
+  // TODO: Don't show "Available Ebikes" if a network does not include Ebikes
+
   return (
     <div className="bg-white sm:flex sm:justify-between my-2 p-1">
       <div>
@@ -18,7 +22,9 @@ export default function Station(props) {
       </div>
       <div>
         <p>Get Directions</p>
-        <p>Favorite This</p>
+
+        {/* onClick fires the Dispatch to add a favorite */}
+        <p onClick={props.addfavorite}>Favorite This</p>
       </div>
     </div>
   );
