@@ -21,7 +21,11 @@ export default function StationList(props) {
   let stationsList;
   if (stations) {
     stationsList = stations.map((e) => (
-      <Station key={e.id} data={e} addfavorite={() => dispatch(add(e))} />
+      <Station
+        key={e.id}
+        data={e}
+        addfavorite={() => dispatch(add({ name: e.name, id: e.id }))}
+      />
     ));
   } else stationsList = <div>loading...</div>;
 
