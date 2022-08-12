@@ -1,13 +1,13 @@
+import logo from "./logo.svg";
 import StationList from "../features/stations/StationList";
 import FavoriteList from "../features/favorites/FavoriteList";
 import Networks from "../features/networks/Networks";
 
 function App() {
-
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-blue text-white font-extrabold text-center p-1">
-        Where's A Bike?
+      <header className="bg-blue text-white">
+        <img src={logo} alt="Where's A Bike?" className="mx-auto" />
       </header>
       {/* app body */}
       <div className="grow md:flex md:flex-row-reverse md:justify-center p-1">
