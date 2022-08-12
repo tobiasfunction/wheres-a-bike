@@ -26,9 +26,9 @@ export default function StationList(props) {
   } else stationsList = <div>loading...</div>;
 
   return (
-    <div className="bg-gray-light m-2 p-2">
-      <p className="font-bold text-xl">All Stations for</p>
-      <p className="text-xl">{networkName}</p>
+    <div className="bg-gray-light m-2 p-4">
+      <p className="font-black text-xl">All Stations For</p>
+      <p className="text-lg mb-2">{networkName}</p>
       {stationsList}
     </div>
   );
