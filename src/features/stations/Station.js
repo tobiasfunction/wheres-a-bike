@@ -23,7 +23,7 @@ export default function Station(props) {
           </p>
         </div>
         {/* Right column */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-around">
           <p className="underline w-max">
             <a
               href={`https://maps.google.com/?q=${props.data.latitude},${props.data.longitude}`}
