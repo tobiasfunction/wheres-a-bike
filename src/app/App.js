@@ -1,6 +1,6 @@
-import AllStations from "./components/AllStations";
-import FavoriteStations from "./components/FavoriteStations";
-import Networks from "./components/Networks";
+import StationList from "../features/stations/StationList";
+import FavoriteList from "../features/favorites/FavoriteList";
+import Networks from "../features/networks/Networks";
 
 function App() {
 
@@ -13,12 +13,12 @@ function App() {
       <div className="grow md:flex md:flex-row-reverse md:justify-center p-1">
         {/* right column */}
         <div className="md:w-64">
-          <FavoriteStations />
+          <FavoriteList />
         </div>
         {/* left column */}
         <div className="md:w-[32rem]">
           <Networks />
-          <AllStations />
+          <StationList />
         </div>
       </div>
       <footer className="w-full bg-blue text-white self-end p-2">footer</footer>

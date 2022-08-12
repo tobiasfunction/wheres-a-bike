@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import AllStationsItem from "./AllStationsItem";
+import Station from "./Station";
 
-export default function AllStations(props) {
+export default function StationList(props) {
   const [stations, setStations] = useState();
   const networkId = "bicing";
   const networkName = "Bicing";
@@ -17,7 +17,7 @@ export default function AllStations(props) {
 
   let stationsList;
   if (stations) {
-    stationsList = stations.map((e) => <AllStationsItem key={e.id} data={e} />);
+    stationsList = stations.map((e) => <Station key={e.id} data={e} />);
   } else stationsList = <div>loading...</div>;
 
   return (

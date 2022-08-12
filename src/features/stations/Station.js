@@ -1,4 +1,4 @@
-export default function AllStationsItem(props) {
+export default function Station(props) {
   return (
     <div className="bg-white sm:flex sm:justify-between my-2 p-1">
       <div>
