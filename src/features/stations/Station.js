@@ -5,6 +5,7 @@ export default function Station(props) {
 
   return (
     <div className="bg-white sm:flex sm:justify-between my-2 p-1">
+      {/* Left column */}
       <div>
         <p className="font-extrabold">{props.data.name}</p>
         <p>
@@ -20,11 +21,23 @@ export default function Station(props) {
           {props.data.empty_slots}
         </p>
       </div>
-      <div>
-        <p>Get Directions</p>
+      {/* Right column */}
+      <div className="flex flex-col justify-center">
+        <p className="underline w-max">
+          <a
+            href={`https://maps.google.com/?q=${props.data.latitude},${props.data.longitude}`}
+          >
+            Get Directions
+          </a>
+        </p>
 
         {/* onClick fires the Dispatch to add a favorite */}
-        <p onClick={props.addfavorite}>Favorite This</p>
+        <p
+          className="underline cursor-pointer w-max"
+          onClick={props.addfavorite}
+        >
+          Favorite This
+        </p>
       </div>
     </div>
   );
