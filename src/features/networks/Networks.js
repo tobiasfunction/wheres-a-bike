@@ -34,7 +34,7 @@ export default function Networks(props) {
       </label>
       <select
         id="chooseNetwork"
-        className="ml-8"
+        className="bg-gray-50 border border-gray-300 rounded-lg block w-60 p-2 m-2"
         onChange={(event) => {
           const newCurrent = networks.find(
             (element) => element.id === event.target.value
