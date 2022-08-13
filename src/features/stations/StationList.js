@@ -5,10 +5,11 @@ import Station from "./Station";
 
 export default function StationList(props) {
   const favorites = useSelector((state) => state.favorite.list);
+  const network = useSelector((state) => state.network);
   const dispatch = useDispatch();
   const [stations, setStations] = useState();
-  const networkId = "bicing";
-  const networkName = "Bicing";
+  const networkId = network.id;
+  const networkName = network.name;
 
   // API Call for the list of stations and available bikes
   // TODO: Error/failure handling
