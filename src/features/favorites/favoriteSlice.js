@@ -9,9 +9,13 @@ export const favoriteSlice = createSlice({
     add: (state, action) => {
       state.list.push(action.payload);
     },
+    remove: (state, action) => {
+      const itemIndex = state.list.findIndex((e) => e.id === action.payload);
+      if (itemIndex >= 0) state.list.splice(itemIndex, 1);
+    },
   },
 });
 
-export const { add } = favoriteSlice.actions;
+export const { add, remove } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;

@@ -1,12 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
+import { remove } from "../favorites/favoriteSlice";
 
 import Favorite from "./Favorite";
 
 export default function FavoriteList(props) {
   const favoritesData = useSelector((state) => state.favorite.list);
+  const dispatch = useDispatch();
 
   const favorites = favoritesData.length ? (
-    favoritesData.map((e, i) => <Favorite key={i} data={e} />)
+    favoritesData.map((e, i) => (
+      <Favorite
+        key={i}
+        data={e}
+        removefavorite={() => dispatch(remove(e.id))}
+      />
+    ))
   ) : (
     <div className="flex items-center h-full">
       <p className="text-center m-4">
