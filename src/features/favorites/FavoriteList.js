@@ -28,7 +28,9 @@ export default function FavoriteList(props) {
       <div className="font-black text-xl text-center m-2">
         Favorite Stations
       </div>
-      <div className="overflow-y-auto max-h-32 md:h-80">{favorites}</div>
+      <div className="overflow-y-auto max-h-32 md:max-h-full md:h-80">
+        {favorites}
+      </div>
     </div>
   );
 }
