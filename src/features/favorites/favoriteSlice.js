@@ -7,7 +7,8 @@ export const favoriteSlice = createSlice({
   },
   reducers: {
     add: (state, action) => {
-      state.list.push(action.payload);
+      const itemExists = state.list.some((e) => e.id === action.payload.id);
+      if (!itemExists) state.list.push(action.payload);
     },
     remove: (state, action) => {
       const itemIndex = state.list.findIndex((e) => e.id === action.payload);
