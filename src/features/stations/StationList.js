@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { add } from "../favorites/favoriteSlice";
 import Station from "./Station";
 
 export default function StationList(props) {
+  const favorites = useSelector((state) => state.favorite.list);
   const dispatch = useDispatch();
   const [stations, setStations] = useState();
   const networkId = "bicing";
@@ -20,13 +21,21 @@ export default function StationList(props) {
 
   let stationsList;
   if (stations) {
-    stationsList = stations.map((e) => (
-      <Station
-        key={e.id}
-        data={e}
-        addfavorite={() => dispatch(add({ name: e.name, id: e.id }))}
-      />
-    ));
+    stationsList = stations.map((station) => {
+      const isFavorite = favorites.some(
+        (favorite) => favorite.id === station.id
+      );
+      return (
+        <Station
+          key={station.id}
+          data={station}
+          isfavorite={isFavorite}
+          addfavorite={() =>
+            dispatch(add({ name: station.name, id: station.id }))
+          }
+        />
+      );
+    });
   } else stationsList = <div>loading...</div>;
 
   return (

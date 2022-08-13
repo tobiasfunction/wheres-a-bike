@@ -3,6 +3,19 @@ import React from "react";
 export default function Station(props) {
   // TODO: Don't show "Available Ebikes" if a network does not include Ebikes
 
+  const FavoriteLink = () => {
+    if (props.isfavorite) return <p>Is a favorite</p>;
+    else
+      return (
+        <p
+          className="underline cursor-pointer w-max"
+          onClick={props.addfavorite}
+        >
+          Favorite this
+        </p>
+      );
+  };
+
   return (
     <div className="bg-white mx-1 my-4 px-4 py-2">
       {/* Left column */}
@@ -31,14 +44,7 @@ export default function Station(props) {
               Get Directions
             </a>
           </p>
-
-          {/* onClick fires the Dispatch to add a favorite */}
-          <p
-            className="underline cursor-pointer w-max"
-            onClick={props.addfavorite}
-          >
-            Favorite This
-          </p>
+          <FavoriteLink />
         </div>
       </div>
     </div>
