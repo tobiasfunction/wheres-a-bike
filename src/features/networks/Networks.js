@@ -7,6 +7,8 @@ export default function Networks(props) {
   const dispatch = useDispatch();
   const [networks, setNetworks] = useState([current]);
 
+  // Currently gets all 656 networks without a good way of finding what you are looking for
+  // Could use filtering by country, or a search bar with suggestions instead
   useEffect(() => {
     fetch("http://api.citybik.es/v2/networks?fields=id,name,location")
       .then((response) => response.json())
