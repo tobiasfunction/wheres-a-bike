@@ -16,6 +16,13 @@ export default function Station(props) {
       );
   };
 
+  // Some networks handle normal vs ebikes differently in the database
+  // And some don't have ebikes
+  const bikes =
+    props.data.extra.normal_bikes ||
+    props.data.free_bikes - props.data.extra.ebikes ||
+    props.data.free_bikes;
+
   return (
     <div className="bg-white mx-1 my-4 px-4 py-2">
       {/* Left column */}
@@ -24,7 +31,7 @@ export default function Station(props) {
         <div>
           <p>
             <span className="font-semibold">Available Bikes: </span>
-            {props.data.extra.normal_bikes}
+            {bikes}
           </p>
           <p>
             <span className="font-semibold">Available Ebikes: </span>
