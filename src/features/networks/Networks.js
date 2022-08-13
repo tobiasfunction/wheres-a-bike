@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { set } from "./networkSlice";
 
 export default function Networks(props) {
-  const current = useSelector((state) => state.network);
+  const current = useSelector((state) => state.network.info);
   const dispatch = useDispatch();
   const [networks, setNetworks] = useState([current]);
 
@@ -13,7 +13,6 @@ export default function Networks(props) {
     fetch("http://api.citybik.es/v2/networks?fields=id,name,location")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.networks);
         setNetworks(data.networks);
       });
   }, []);
@@ -36,8 +35,11 @@ export default function Networks(props) {
       <select
         id="chooseNetwork"
         className="ml-8"
-        onChange={(e) => {
-          // do magic
+        onChange={(event) => {
+          const newCurrent = networks.find(
+            (element) => element.id === event.target.value
+          );
+          dispatch(set(newCurrent));
         }}
       >
         {networkList}
