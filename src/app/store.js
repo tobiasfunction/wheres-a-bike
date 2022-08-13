@@ -8,5 +8,6 @@ export default configureStore({
     favorite: favoriteReducer,
     network: networkReducer,
   },
+  // For browser storage
   preloadedState: loadState(),
 });

@@ -17,14 +17,13 @@ export default function Networks(props) {
       });
   }, []);
 
-  let networkList;
-  if (networks) {
-    networkList = networks.map((e) => (
+  const networkList = networks.map((e, i) => {
+    return (
       <option key={e.id} value={e.id}>
         {e.name}, {e.location.city}
       </option>
-    ));
-  }
+    );
+  });
 
   return (
     <div className="bg-orange m-2 p-4">
@@ -36,6 +35,8 @@ export default function Networks(props) {
         id="chooseNetwork"
         className="bg-gray-50 border border-gray-300 rounded-lg block w-60 p-2 m-2"
         onChange={(event) => {
+          // Network ID is stored in the element's value, but we want to save all the network's info
+          // So it can be used as the default
           const newCurrent = networks.find(
             (element) => element.id === event.target.value
           );

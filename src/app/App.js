@@ -11,7 +11,7 @@ function App() {
       </header>
       {/* app body */}
       <div className="grow md:flex md:flex-row-reverse md:justify-center p-1">
-        {/* right column */}
+        {/* right column comes first for responsiveness reasons */}
         <div className="md:w-64">
           <FavoriteList />
         </div>
